@@ -18,12 +18,24 @@
         }
     }
 
-    function getHumanChoice () {
+    function getHumanChoice() {
         let choice = prompt("Pick Rock Paper or Scissors!")
         return choice;
     }
-    console.log(getComputerChoice())
-    console.log(getHumanChoice())
+
+    const humanScore = 0, computerScore = 0
+
+    function playRound(humanChoice, computerChoice) {
+        let h = humanChoice.toLowerCase()
+        let c = computerChoice.toLowerCase()
+
+        console.log(h)
+        console.log(c)
+    }
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
   </script>
 </body>
 </html>
