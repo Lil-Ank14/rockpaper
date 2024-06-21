@@ -29,13 +29,18 @@
         let h = humanChoice.toLowerCase()
         let c = computerChoice.toLowerCase()
 
-        console.log(h)
-        console.log(c)
+        if (h === "rock" && c === "scissors" || h === "paper " && c === "rock" || h === "scissors" && c === "paper") {
+            return "You win! " + h + " beats " + c
+        } else if (h === c) { 
+            return "It's a draw!"
+        } else {
+            return "You lose! " + c + " beats " + h
+        }
     }
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
-    playRound(humanSelection, computerSelection);
+    console.log(playRound(humanSelection, computerSelection))
   </script>
 </body>
 </html>
