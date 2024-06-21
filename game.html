@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page Title</title>
+  </head>
+  <body>
+    <script>
+      // Your JavaScript goes here!
+      let humanScore = 0,
+        computerScore = 0;
+      for (var x = 0; x < 5; x++) {
+        playGame();
+      }
+      function getComputerChoice() {
+        let rand = Math.random();
+        if (rand <= 0.33) {
+          return "rock";
+        } else if (rand <= 0.66 && rand > 0.33) {
+          return "paper";
+        } else {
+          return "scissors";
+        }
+      }
+
+      function getHumanChoice() {
+        let choice = prompt("Pick Rock Paper or Scissors!");
+        return choice;
+      }
+
+      function playGame() {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        function playRound(humanChoice, computerChoice) {
+          let h = humanChoice.toLowerCase();
+          let c = computerChoice.toLowerCase();
+
+          if (
+            (h === "rock" && c === "scissors") ||
+            (h === "paper " && c === "rock") ||
+            (h === "scissors" && c === "paper")
+          ) {
+            humanScore++;
+            console.log("You win! " + h + " beats " + c);
+          } else if (h === c) {
+            console.log("It's a draw!");
+          } else {
+            computerScore++;
+            console.log("You lose! " + c + " beats " + h);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
